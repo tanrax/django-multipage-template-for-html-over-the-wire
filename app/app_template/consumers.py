@@ -9,11 +9,6 @@ class ExampleConsumer(JsonWebsocketConsumer):
         """Event when client connects"""
         # Accept the connection
         self.accept()
-        # Make session task list
-        if "tasks" not in self.scope["session"]:
-            self.scope["session"]["tasks"] = []
-            self.scope["session"].save()
-
 
     def disconnect(self, close_code):
         """Event when client disconnects"""
@@ -38,8 +33,6 @@ class ExampleConsumer(JsonWebsocketConsumer):
                 actions.action_login(self, data)
             case "Logout":
                 actions.action_logout(self)
-            case "Add lap":
-                actions.add_lap(self)
             case "Add task":
                 actions.add_task(self, data)
 

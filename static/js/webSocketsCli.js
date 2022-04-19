@@ -7,7 +7,7 @@
  * @param {string} url - WebSockets server url
  * @return {WebSocket}
  */
-export function connect(url=`${document.body.dataset.scheme === 'http' ? 'ws' : 'wss'}://${ document.body.dataset.host }/ws/social-network/`) {
+export function connect(url=`${document.body.dataset.scheme === 'http' ? 'ws' : 'wss'}://${ document.body.dataset.host }/ws/example/`) {
     window.myWebSocket = new WebSocket(url);
     return window.myWebSocket;
 }
