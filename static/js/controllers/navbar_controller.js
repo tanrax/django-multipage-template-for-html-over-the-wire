@@ -19,4 +19,16 @@ export default class extends Controller {
             }
         }, window.myWebSocket);
     }
+
+    /**
+     * Send message to Logout
+     * @param {Event} event
+     * @return {void}
+     */
+    logout(event) {
+        sendData({
+            action: 'Logout',
+            data: {}
+        }, window.myWebSocket);
+    }
 }

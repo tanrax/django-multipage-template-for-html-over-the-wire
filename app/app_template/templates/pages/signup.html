@@ -1,5 +1,5 @@
 <h1>Signup</h1>
-<form id="signup-form">
+<form id="signup-form" data-controller="signup">
     {% if user_exist %}
         <p>Email already exist</p>
     {% endif %}
@@ -7,5 +7,5 @@
         <p>Passwords do not match.</p>
     {% endif %}
     {{ form.as_p }}
-    <input type="submit" class="button" value="Signup">
+    <input type="submit" class="button" value="Signup" data-action="click->signup#sendFormSignup">
 </form>
